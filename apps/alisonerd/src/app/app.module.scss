@@ -1,1 +1,7 @@
-/* Your styles goes here. */
+@import "./../../../../libs/ui/src/lib/themed-style.scss";
+
+.app {
+    width: 100%;
+    height: 100%;
+ @include themed-style('background-color', 'primary');
+}
