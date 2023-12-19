@@ -1,0 +1,10 @@
+@mixin themed() {
+    @each $theme-name, $properties in $themes {
+      .theme--#{$theme-name} {
+        // define a css variable for each property
+        @each $name, $property in $properties {
+          --#{$name}: #{$property};
+        }
+      }
+    }
+  }

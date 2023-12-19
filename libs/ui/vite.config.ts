@@ -11,7 +11,13 @@ export default defineConfig({
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
   // },
-
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: "@import 'libs/ui/src/themes/main.scss'; "
+      }
+    }
+  },
   test: {
     globals: true,
     cache: { dir: '../../node_modules/.vitest' },
