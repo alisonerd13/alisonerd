@@ -1,7 +1,7 @@
 {
-  "name": "i18n",
+  "name": "shared",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/i18n/src",
+  "sourceRoot": "libs/shared/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,7 +9,7 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/i18n/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/shared/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
@@ -17,7 +17,7 @@
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/libs/i18n"
+        "reportsDirectory": "../../coverage/libs/shared"
       }
     }
   }

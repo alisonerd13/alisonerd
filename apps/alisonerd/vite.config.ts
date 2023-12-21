@@ -30,12 +30,5 @@ export default defineConfig({
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: "@import 'libs/ui/src/themes/main.scss'; "
-      }
-    }
-  },
+  }
 });

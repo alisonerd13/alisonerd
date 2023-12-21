@@ -15,11 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@timothy-alison/auth": ["libs/auth/src/index.ts"],
-      "@timothy-alison/i18n": ["libs/i18n/src/index.ts"],
-      "@timothy-alison/interface": ["libs/interface/src/index.ts"],
-      "@timothy-alison/themes": ["libs/themes/src/index.ts"],
-      "@timothy-alison/ui": ["libs/ui/src/index.ts"]
+      "@timothy-alison/shared": ["libs/shared/src/index.ts"],
+      "@timothy-alison/themes": ["libs/themes/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,9 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useContext, useEffect, useState } from 'react';
 import styles from './app.module.scss';
-import { THEMES, albums, useThemes } from '@timothy-alison/ui';
 import clsx from 'clsx';
 import SpotifyAuthButton from '../components/SpotifyAuthButton';
+import { THEMES, albums, useThemes } from '@timothy-alison/shared';
 export function App() {
   const themeList = Object.entries(THEMES).map((theme) => theme[1]);
   const { theme, switchTheme } = useThemes();
@@ -15,6 +15,7 @@ export function App() {
         onChange={(e) => {
           switchTheme(e.target.value as albums);
         }}
+        value={THEMES[theme].id}
       >
         {themeList.map((theme) => {
           return (
