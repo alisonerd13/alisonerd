@@ -2,12 +2,19 @@
 import { useContext, useEffect, useState } from 'react';
 import styles from './app.module.scss';
 import clsx from 'clsx';
-import SpotifyAuthButton from '../components/SpotifyAuthButton';
-import { THEMES, albums, useThemes } from '@timothy-alison/shared';
+import {
+  SpotifyAPI,
+  SpotifyApiAxiosContext,
+  THEMES,
+  albums,
+  useSpotifyAuth,
+  useThemes,
+} from '@timothy-alison/shared';
+import User from '../pages/user';
 export function App() {
   const themeList = Object.entries(THEMES).map((theme) => theme[1]);
   const { theme, switchTheme } = useThemes();
-
+  const { token, logout, loginURL } = useSpotifyAuth();
   return (
     <div className={clsx(styles.app, styles[theme])}>
       <h1 className="text-3xl font-bold ">{THEMES[theme].symbol}</h1>
@@ -25,7 +32,17 @@ export function App() {
           );
         })}
       </select>
-      <SpotifyAuthButton />
+      {!token ? (
+        <a href={loginURL}>Login to Spotify</a>
+      ) : (
+        <button onClick={logout}>Logout</button>
+      )}
+      <SpotifyApiAxiosContext.Provider
+        value={{ SpotifyAPI: SpotifyAPI, token: token }}
+      >
+        {token}
+        <User />
+      </SpotifyApiAxiosContext.Provider>
     </div>
   );
 }
