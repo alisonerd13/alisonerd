@@ -1,0 +1,43 @@
+export type Dispatch = (action: Action) => void;
+export type State = {
+  user: UserViaSpotify | undefined
+  isAuth: boolean;
+  isFetching: boolean;
+  error: string;
+};
+export type UserViaSpotify = {
+    token: string | null | undefined;
+  } & SpotifyUserInfo;
+
+export type SpotifyProviderProps = { children: React.ReactNode };
+
+export type SpotifyUserInfo =
+  | {
+      display_name: string;
+      external_urls: {
+        spotify: string;
+      };
+      followers: {
+        href: string;
+        total: 0;
+      };
+      href: string;
+      id: string;
+      images: [
+        {
+          url: string;
+          height: number;
+          width: number;
+        }
+      ];
+      type: string;
+      uri: string;
+    }
+  | undefined;
+
+export type LoginCheckCase =
+  | { type: 'login_check_pending' }
+  | { type: 'login_check_fulfilled'; payload: UserViaSpotify }
+  | { type: 'login_check_rejected';payload: string };
+
+export type Action = LoginCheckCase | { type: 'logout' };

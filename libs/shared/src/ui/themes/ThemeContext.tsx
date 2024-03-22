@@ -54,13 +54,13 @@ export const THEMES: TThemes = {
   evermore: {
     id: 'evermore',
     name: 'evermore',
-    symbol: ['🕰️'],
+    symbol: ['🍂'],
     color: [],
   },
   midnights: {
-    id: '10',
+    id: 'midnights',
     name: 'Midnights',
-    symbol: [],
+    symbol: ['🕰️'],
     color: [],
   },
 };
@@ -73,7 +73,7 @@ export const ThemeContext = createContext<ThemeContextProps>({
   switchTheme: (theme) => {},
 });
 
-const ThemeProvider = ({ children }: { children: ReactNode }) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const switchTheme = (newTheme: albums) => {
     setThemeName(newTheme);
     setLocalTheme(newTheme);
@@ -92,4 +92,3 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export { ThemeProvider };

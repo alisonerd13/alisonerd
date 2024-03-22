@@ -1,1 +1,1 @@
-export * from "./SpotifyContext"
+export * from "./SpotifyContext/index"

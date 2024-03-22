@@ -1,4 +1,3 @@
 export * from "./useThemes"
-export * from "./useSpotifyApi"
-export * from "./useSpotifyApiAxios"
+export * from "./useSpotifyStore"
 export * from "./useSpotifyAuth"

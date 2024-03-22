@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import SpotifyApiContext from "../context/SpotifyContext";
+import { SpotifyApiAxiosContext } from "../context";
 
-export const useSpotifyApi = () => {
-    const context = useContext(SpotifyApiContext);
+export const useSpotifyStore = () => {
+    const context = useContext(SpotifyApiAxiosContext);
     if (!context) {
       throw new Error('useThemes must be used within a ThemesProvider');
     }
