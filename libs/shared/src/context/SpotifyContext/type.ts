@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type Dispatch = (action: Action) => void;
 export type State = {
   user: UserViaSpotify | undefined
@@ -32,6 +33,7 @@ export type SpotifyUserInfo =
       ];
       type: string;
       uri: string;
+      myTopTrack:any;
     }
   | undefined;
 
@@ -40,4 +42,10 @@ export type LoginCheckCase =
   | { type: 'login_check_fulfilled'; payload: UserViaSpotify }
   | { type: 'login_check_rejected';payload: string };
 
-export type Action = LoginCheckCase | { type: 'logout' };
+export type GetSpotifyData =
+  | { type: 'get_my_top_track_pending' }
+  | { type: 'get_my_top_track_fulfilled'; payload: any }
+  | { type: 'get_my_top_track_rejected';payload: string };
+
+
+export type Action = LoginCheckCase | GetSpotifyData | { type: 'logout' };

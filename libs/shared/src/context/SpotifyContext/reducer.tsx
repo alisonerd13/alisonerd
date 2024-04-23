@@ -49,6 +49,7 @@ const initState: State = {
     ],
     type: '',
     uri: '',
+    myTopTrack:[]
   },
 };
 export const SpotifyApiAxiosContext = createContext<
@@ -72,6 +73,24 @@ export const spotifyReducer = (state: State, action: Action): State => {
       break;
     }
     case 'login_check_rejected': {
+      currentState.isFetching = false;
+      currentState.isAuth = false;
+      currentState.user = initState.user;
+      currentState.error = action.payload;
+      break;
+    }
+    case 'get_my_top_track_pending': {
+      currentState.isFetching = true;
+      break;
+    }
+    case 'get_my_top_track_fulfilled': {
+      currentState.isFetching = false;
+      currentState.user = action.payload;
+      currentState.isAuth = true;
+      currentState.error = '';
+      break;
+    }
+    case 'get_my_top_track_rejected': {
       currentState.isFetching = false;
       currentState.isAuth = false;
       currentState.user = initState.user;

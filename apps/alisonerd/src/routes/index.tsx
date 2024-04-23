@@ -3,7 +3,11 @@ import { Home } from '../pages/home';
 
 const router = createBrowserRouter([
   {
-    element: <>layout</>,
+    element: (
+      <>
+        <Home />
+      </>
+    ),
     children: [
       { path: ':lang', children: [{ path: '', element: <Home /> }] },
       {

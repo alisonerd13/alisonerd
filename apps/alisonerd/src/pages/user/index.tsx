@@ -20,7 +20,7 @@ const User = () => {
   } = useSpotifyStore();
   useEffect(() => {
     spotifyUser.token && loginCheck(spotifyUser.token);
-  }, []);
+  }, [spotifyUser.token]);
 
   return !isAuth ? (
     <div>
