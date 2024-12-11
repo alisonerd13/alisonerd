@@ -61,6 +61,12 @@ export const THEMES: TThemes = {
     symbol: ['🕰️'],
     color: ['#e0edfd', '#1f2e43'],
   },
+  ttpd: {
+    id: 'ttpd',
+    name: 'The Third Party Design',
+    symbol: ['🏡'],
+    color: ['#221d1a', '#a2998b'],
+  },
 };
 
 export const themes = {

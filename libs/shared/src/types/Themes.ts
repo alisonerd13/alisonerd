@@ -8,7 +8,8 @@ export type albums =
   | 'lover'
   | 'folklore'
   | 'evermore'
-  | 'midnights';
+  | 'midnights'
+  | 'ttpd';
 
 export type TTheme = {
   id: string;
@@ -28,4 +29,5 @@ export type TThemes = {
   folklore: TTheme;
   evermore: TTheme;
   midnights: TTheme;
+  ttpd: TTheme;
 };
