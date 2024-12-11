@@ -1,18 +1,22 @@
-import { Navigate, createBrowserRouter } from 'react-router-dom';
-import { Home } from '../pages/home';
+import { createBrowserRouter } from 'react-router-dom';
+import { HomeLayout } from '../components';
 
 const router = createBrowserRouter([
   {
-    element: (
-      <>
-        <Home />
-      </>
-    ),
+    path: '/',
+    element: <HomeLayout />,
     children: [
-      { path: ':lang', children: [{ path: '', element: <Home /> }] },
+      {
+        index: true,
+        lazy: () => import('./../pages/home'),
+      },
+      {
+        path: 'spotify-analysis',
+        lazy: () => import('./../pages/spotify-analysis'),
+      },
       {
         path: '*',
-        element: <Navigate to="/en" replace />,
+        lazy: () => import('./../pages/not-found'),
       },
     ],
   },

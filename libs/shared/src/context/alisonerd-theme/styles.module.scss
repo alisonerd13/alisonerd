@@ -1,0 +1,60 @@
+@import './../../ui/themes/main.scss';
+
+$theme-list: (
+  taylorSwift: (
+    #b0caad,
+    #0c190c,
+  ),
+  fearlessTV: (
+    #fddaa6,
+    #1e151a,
+  ),
+  speakNowTV: (
+    #d6badc,
+    #000000,
+  ),
+  redTV: (
+    #72333c,
+    #c7b2a2,
+  ),
+  one989TV: (
+    #034a62,
+    #d1f3ff,
+  ),
+  reputation: (
+    #2a2628,
+    #cacaca,
+  ),
+  lover: (
+    #fbb3d1,
+    #0b160b,
+  ),
+  folklore: (
+    #d5d5d5,
+    #3d2d34,
+  ),
+  evermore: (
+    #e0c9af,
+    #2e2327,
+  ),
+  midnights: (
+    #e0edfd,
+    #1f2e43,
+  ),
+  ttpd: (
+    #221d1a,
+    #a2998b,
+  ),
+);
+
+.theme-provider {
+  @each $theme, $colors in $theme-list {
+    $primary: nth($colors, 1);
+    $secondary: nth($colors, 2);
+
+    &[data-theme='#{$theme}'] {
+      --primary-color: #{$primary};
+      --secondary-color: #{$secondary};
+    }
+  }
+}

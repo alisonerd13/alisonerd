@@ -1,0 +1,6 @@
+@function theme-color($property) {
+  @return var(--#{$property});
+}
+.nav-wrapper {
+  background-color: theme-color('primary-color');
+}

@@ -1,1 +1,2 @@
-export * from "./SpotifyAuthButton"
+export * from './SpotifyAuthButton';
+export { HomeLayout } from './layouts';

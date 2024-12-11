@@ -9,8 +9,8 @@ export type albums =
   | 'folklore'
   | 'evermore'
   | 'midnights';
-  
-  export type TThemeAttr = {
+
+export type TTheme = {
   id: string;
   symbol: string[];
   color: string[];
@@ -18,14 +18,14 @@ export type albums =
 };
 
 export type TThemes = {
-  taylorSwift: TThemeAttr;
-  fearlessTV: TThemeAttr;
-  speakNowTV: TThemeAttr;
-  redTV: TThemeAttr;
-  one989TV: TThemeAttr;
-  reputation: TThemeAttr;
-  lover: TThemeAttr;
-  folklore: TThemeAttr;
-  evermore: TThemeAttr;
-  midnights: TThemeAttr;
+  taylorSwift: TTheme;
+  fearlessTV: TTheme;
+  speakNowTV: TTheme;
+  redTV: TTheme;
+  one989TV: TTheme;
+  reputation: TTheme;
+  lover: TTheme;
+  folklore: TTheme;
+  evermore: TTheme;
+  midnights: TTheme;
 };
